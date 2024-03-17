@@ -1,9 +1,10 @@
-﻿using SignalIR.DataAccessLayer.Abstract;
+﻿using SignalIR.BusinessLayer.Abstract;
+using SignalIR.DataAccessLayer.Abstract;
 using SignalR.EntityLayer.Entities;
 
 namespace SignalIR.BusinessLayer.Concrete
 {
-    public class CategoryManager : ICategoryDal
+    public class CategoryManager : ICategoryService
     {
         private readonly ICategoryDal _categoryDal;
 
@@ -12,27 +13,27 @@ namespace SignalIR.BusinessLayer.Concrete
             _categoryDal = categoryDal;
         }
 
-        public void Add(Category entity)
+        public void TAdd(Category entity)
         {
             _categoryDal.Add(entity);
         }
 
-        public void Delete(Category entity)
+        public void TDelete(Category entity)
         {
             _categoryDal.Delete(entity);
         }
 
-        public Category GetById(int id)
+        public Category TGetById(int id)
         {
             return _categoryDal.GetById(id);
         }
 
-        public List<Category> GetListAll()
+        public List<Category> TGetListAll()
         {
             return _categoryDal.GetListAll();
         }
 
-        public void Update(Category entity)
+        public void TUpdate(Category entity)
         {
             _categoryDal.Update(entity);
         }

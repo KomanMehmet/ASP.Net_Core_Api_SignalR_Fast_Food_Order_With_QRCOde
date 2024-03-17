@@ -1,9 +1,10 @@
-﻿using SignalIR.DataAccessLayer.Abstract;
+﻿using SignalIR.BusinessLayer.Abstract;
+using SignalIR.DataAccessLayer.Abstract;
 using SignalR.EntityLayer.Entities;
 
 namespace SignalIR.BusinessLayer.Concrete
 {
-    public class SocialMediaManager : ISocialMediaDal
+    public class SocialMediaManager : ISocialMediaService
     {
         private readonly ISocialMediaDal _socialMediaDal;
 
@@ -12,27 +13,27 @@ namespace SignalIR.BusinessLayer.Concrete
             _socialMediaDal = socialMediaDal;
         }
 
-        public void Add(SocialMedia entity)
+        public void TAdd(SocialMedia entity)
         {
             _socialMediaDal.Add(entity);
         }
 
-        public void Delete(SocialMedia entity)
+        public void TDelete(SocialMedia entity)
         {
             _socialMediaDal.Delete(entity);
         }
 
-        public SocialMedia GetById(int id)
+        public SocialMedia TGetById(int id)
         {
             return _socialMediaDal.GetById(id);
         }
 
-        public List<SocialMedia> GetListAll()
+        public List<SocialMedia> TGetListAll()
         {
             return _socialMediaDal.GetListAll();
         }
 
-        public void Update(SocialMedia entity)
+        public void TUpdate(SocialMedia entity)
         {
             _socialMediaDal.Update(entity);
         }

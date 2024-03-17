@@ -1,9 +1,10 @@
-﻿using SignalIR.DataAccessLayer.Abstract;
+﻿using SignalIR.BusinessLayer.Abstract;
+using SignalIR.DataAccessLayer.Abstract;
 using SignalR.EntityLayer.Entities;
 
 namespace SignalIR.BusinessLayer.Concrete
 {
-    public class TestimonialManager : ITestimonilDal
+    public class TestimonialManager : ITestimonialService
     {
         private readonly ITestimonilDal _testimonilDal;
 
@@ -12,27 +13,27 @@ namespace SignalIR.BusinessLayer.Concrete
             _testimonilDal = testimonilDal;
         }
 
-        public void Add(Testimonial entity)
+        public void TAdd(Testimonial entity)
         {
             _testimonilDal.Add(entity);
         }
 
-        public void Delete(Testimonial entity)
+        public void TDelete(Testimonial entity)
         {
             _testimonilDal.Delete(entity);
         }
 
-        public Testimonial GetById(int id)
+        public Testimonial TGetById(int id)
         {
             return _testimonilDal.GetById(id);
         }
 
-        public List<Testimonial> GetListAll()
+        public List<Testimonial> TGetListAll()
         {
             return _testimonilDal.GetListAll();
         }
 
-        public void Update(Testimonial entity)
+        public void TUpdate(Testimonial entity)
         {
             _testimonilDal.Update(entity);
         }

@@ -5,7 +5,7 @@ using SignalR.EntityLayer.Entities;
 
 namespace SignalIR.DataAccessLayer.EntityFramework
 {
-    public class EfFeatureDal : GenericRepository<Discount>, IDiscountDal
+    public class EfFeatureDal : GenericRepository<Feature>, IFeatureDal
     {
         public EfFeatureDal(SignalIRContext context) : base(context)
         {

@@ -2,9 +2,9 @@
 {
     public class CreateSocialMediaDto
     {
-        public string SocialMediaTitle { get; }
+        public string SocialMediaTitle { get; set; }
 
-        public string SocialMediaUrl { get; }
+        public string SocialMediaUrl { get; set; }
 
         public string Icon { get; set; }
     }

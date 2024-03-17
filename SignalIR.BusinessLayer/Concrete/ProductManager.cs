@@ -1,9 +1,10 @@
-﻿using SignalIR.DataAccessLayer.Abstract;
+﻿using SignalIR.BusinessLayer.Abstract;
+using SignalIR.DataAccessLayer.Abstract;
 using SignalR.EntityLayer.Entities;
 
 namespace SignalIR.BusinessLayer.Concrete
 {
-    public class ProductManager : IProductDal
+    public class ProductManager : IProductService
     {
         private readonly IProductDal _productDal;
 
@@ -12,29 +13,29 @@ namespace SignalIR.BusinessLayer.Concrete
             _productDal = productDal;
         }
 
-        public void Add(Product entity)
+        public void TAdd(Product entity)
         {
             _productDal.Add(entity);
         }
 
-        public void Delete(Product entity)
+        public void TDelete(Product entity)
         {
             _productDal.Delete(entity);
         }
 
-        public Product GetById(int id)
+        public Product TGetById(int id)
         {
             return _productDal.GetById(id);
         }
 
-        public List<Product> GetListAll()
+        public List<Product> TGetListAll()
         {
             return _productDal.GetListAll();
         }
 
-        public void Update(Product entity)
+        public void TUpdate(Product entity)
         {
-            _productDal.Update(entity); 
+            _productDal.Update(entity);
         }
     }
 }

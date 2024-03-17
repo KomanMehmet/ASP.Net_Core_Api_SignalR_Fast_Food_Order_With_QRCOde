@@ -1,9 +1,10 @@
-﻿using SignalIR.DataAccessLayer.Abstract;
+﻿using SignalIR.BusinessLayer.Abstract;
+using SignalIR.DataAccessLayer.Abstract;
 using SignalR.EntityLayer.Entities;
 
 namespace SignalIR.BusinessLayer.Concrete
 {
-    public class DiscountManager : IDiscountDal
+    public class DiscountManager : IDiscountService
     {
         private readonly IDiscountDal _discountDal;
 
@@ -12,27 +13,27 @@ namespace SignalIR.BusinessLayer.Concrete
             _discountDal = discountDal;
         }
 
-        public void Add(Discount entity)
+        public void TAdd(Discount entity)
         {
             _discountDal.Add(entity);
         }
 
-        public void Delete(Discount entity)
+        public void TDelete(Discount entity)
         {
             _discountDal.Delete(entity);
         }
 
-        public Discount GetById(int id)
+        public Discount TGetById(int id)
         {
             return _discountDal.GetById(id);
         }
 
-        public List<Discount> GetListAll()
+        public List<Discount> TGetListAll()
         {
             return _discountDal.GetListAll();
         }
 
-        public void Update(Discount entity)
+        public void TUpdate(Discount entity)
         {
             _discountDal.Update(entity);
         }
