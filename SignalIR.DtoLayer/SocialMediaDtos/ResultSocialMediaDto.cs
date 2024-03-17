@@ -1,7 +1,9 @@
-﻿namespace SignalIR.DtoLayer.SocialMediaDto
+﻿namespace SignalIR.DtoLayer.SocialMediaDtos
 {
-    public class CreateSocialMediaDto
+    public class ResultSocialMediaDto
     {
+        public int SocialMediaID { get; set; }
+
         public string SocialMediaTitle { get; }
 
         public string SocialMediaUrl { get; }

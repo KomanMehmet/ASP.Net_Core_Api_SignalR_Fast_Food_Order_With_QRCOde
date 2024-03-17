@@ -1,4 +1,4 @@
-﻿namespace SignalIR.DtoLayer.SocialMediaDto
+﻿namespace SignalIR.DtoLayer.SocialMediaDtos
 {
     public class UpdateSocialMediaDto
     {

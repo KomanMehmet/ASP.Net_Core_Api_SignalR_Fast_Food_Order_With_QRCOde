@@ -1,9 +1,10 @@
-﻿using SignalIR.DataAccessLayer.Abstract;
+﻿using SignalIR.BusinessLayer.Abstract;
+using SignalIR.DataAccessLayer.Abstract;
 using SignalR.EntityLayer.Entities;
 
 namespace SignalIR.BusinessLayer.Concrete
 {
-    public class BookingManager : IBookingDal
+    public class BookingManager : IBookingService
     {
         private readonly IBookingDal _bookingDal;
 
@@ -12,27 +13,27 @@ namespace SignalIR.BusinessLayer.Concrete
             _bookingDal = bookingDal;
         }
 
-        public void Add(Booking entity)
+        public void TAdd(Booking entity)
         {
             _bookingDal.Add(entity);
         }
 
-        public void Delete(Booking entity)
+        public void TDelete(Booking entity)
         {
             _bookingDal.Delete(entity);
         }
 
-        public Booking GetById(int id)
+        public Booking TGetById(int id)
         {
             return _bookingDal.GetById(id);
         }
 
-        public List<Booking> GetListAll()
+        public List<Booking> TGetListAll()
         {
             return _bookingDal.GetListAll();
         }
 
-        public void Update(Booking entity)
+        public void TUpdate(Booking entity)
         {
             _bookingDal.Update(entity);
         }

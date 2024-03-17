@@ -1,6 +1,17 @@
+using SignalIR.BusinessLayer.Abstract;
+using SignalIR.BusinessLayer.Concrete;
+using SignalIR.DataAccessLayer.Abstract;
+using SignalIR.DataAccessLayer.Concrete;
+using SignalIR.DataAccessLayer.EntityFramework;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddDbContext<SignalIRContext>();
+builder.Services.AddScoped<IAboutService, AboutManager>();
+builder.Services.AddScoped<IAboutDal, EfAboutDal>();
+
+builder.Services.AddScoped<IBookingService, BookingManager>();
+builder.Services.AddScoped<IBookingDal, EfBookingDal>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
