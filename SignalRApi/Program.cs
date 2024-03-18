@@ -3,10 +3,14 @@ using SignalIR.BusinessLayer.Concrete;
 using SignalIR.DataAccessLayer.Abstract;
 using SignalIR.DataAccessLayer.Concrete;
 using SignalIR.DataAccessLayer.EntityFramework;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 builder.Services.AddDbContext<SignalIRContext>();
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
 builder.Services.AddScoped<IAboutService, AboutManager>();
 builder.Services.AddScoped<IAboutDal, EfAboutDal>();
 
