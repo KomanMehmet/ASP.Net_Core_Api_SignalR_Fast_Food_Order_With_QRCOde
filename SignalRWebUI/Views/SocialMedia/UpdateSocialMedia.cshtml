@@ -1,0 +1,46 @@
+﻿@model UpdateSocialMediaDto
+
+@{
+    ViewData["Title"] = "UpdateSocialMedia";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Sosyal Medya İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <form method="post">
+                        <input type="hidden" asp-for="SocialMediaID"/>
+                        <div class="card-header">
+                            <div class="card-title">Sosyal Medya Bilgisi Girişi</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="socialMediaTitle">Sosyal Medya Adı Giriniz</label>
+                                <input type="text" class="form-control" id="socialMediaTitle" asp-for="SocialMediaTitle">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="socialMediaIcon">Sosyal Medya Icon'u Giriniz</label>
+                                <input type="text" class="form-control" id="socialMediaIcon" asp-for="Icon">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="socialMediaUrl">Sosyal Medya URL adresini Giriniz</label>
+                                <input type="text" class="form-control" id="socialMediaUrl" asp-for="SocialMediaUrl">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-primary">Sosyal Medya Bilgisini Güncelle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,52 @@
+﻿@model UpdateDiscountDto
+
+@{
+    ViewData["Title"] = "UpdateDiscount";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">İndirim İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <form method="post">
+                        <input type="hidden" asp-for="DiscountID"/>
+                        <div class="card-header">
+                            <div class="card-title">İndirim Bilgisi Güncelle</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="discountTitle">İndirim Başlığını Giriniz</label>
+                                <input type="text" class="form-control" id="discountTitle" asp-for="Title">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="discountDescription">İndirim Açıklamasını Giriniz</label>
+                                <input type="text" class="form-control" id="discountDescription" asp-for="Description">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="discountAmount">İndirim miktarını Giriniz</label>
+                                <input type="text" class="form-control" id="discountAmount" asp-for="Amount">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="discountImage">Ürünün Görselini Giriniz</label>
+                                <input type="text" class="form-control" id="discountImage" asp-for="ImageURL">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-primary">İndirim Bilgisini Güncelle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
