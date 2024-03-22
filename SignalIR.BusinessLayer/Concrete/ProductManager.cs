@@ -33,9 +33,44 @@ namespace SignalIR.BusinessLayer.Concrete
             return _productDal.GetListAll();
         }
 
+        public int TGetProductCount()
+        {
+            return _productDal.GetProductCount();
+        }
+
         public List<Product> TGetProductsWithCategories()
         {
             return _productDal.GetProductsWithCategories();
+        }
+
+        public string THighestPricedProductName()
+        {
+            return _productDal.HighestPricedProductName();
+        }
+
+        public string TLowestPriceProductName()
+        {
+            return _productDal.LowestPriceProductName();
+        }
+
+        public int TProductCountByCategoryNameDrink()
+        {
+            return _productDal.ProductCountByCategoryNameDrink();
+        }
+
+        public int TProductCountByCategoryNameHamburger()
+        {
+            return _productDal.ProductCountByCategoryNameHamburger();
+        }
+
+        public decimal TProductPriceAvg()
+        {
+            return _productDal.ProductPriceAvg();
+        }
+
+        public decimal TProductPriceByHamburgerAvg()
+        {
+            return _productDal.ProductPriceByHamburgerAvg();
         }
 
         public void TUpdate(Product entity)

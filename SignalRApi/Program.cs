@@ -3,10 +3,22 @@ using SignalIR.BusinessLayer.Concrete;
 using SignalIR.DataAccessLayer.Abstract;
 using SignalIR.DataAccessLayer.Concrete;
 using SignalIR.DataAccessLayer.EntityFramework;
+using SignalRApi.Hubs;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("CorsPolicy", builder =>
+    {
+        builder.AllowAnyHeader()
+        .AllowAnyMethod()
+        .SetIsOriginAllowed((host) => true)
+        .AllowCredentials();
+    });
+});
+builder.Services.AddSignalR();
 
 builder.Services.AddDbContext<SignalIRContext>();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
@@ -38,6 +50,12 @@ builder.Services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
 builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 builder.Services.AddScoped<ITestimonilDal, EfTestimonialDal>();
 
+builder.Services.AddScoped<IOrderService, OrderManager>();
+builder.Services.AddScoped<IOrderDal, EfOrderDal>();
+
+builder.Services.AddScoped<IOrderDetailService, OrderDetailManager>();
+builder.Services.AddScoped<IOrderDetailDal, EfOrderDetailDal>();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -52,10 +70,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("CorsPolicy");
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapHub<SignalIRHub>("/Restauranthub");//istekte bulunacaðýmýz yer //localhos://1234/signalrhub. Ýsteði buraya yapmak istediðimizi bildiriyoruz.
 
 app.Run();

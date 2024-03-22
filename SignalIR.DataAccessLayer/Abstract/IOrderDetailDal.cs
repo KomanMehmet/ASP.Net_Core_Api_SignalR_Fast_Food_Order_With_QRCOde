@@ -2,8 +2,7 @@
 
 namespace SignalIR.DataAccessLayer.Abstract
 {
-    public interface IContactDal : IGenericDal<Contact>
+    public interface IOrderDetailDal : IGenericDal<OrderDetail>
     {
-       
     }
 }
