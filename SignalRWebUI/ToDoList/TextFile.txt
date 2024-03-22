@@ -6,6 +6,7 @@
 --Kategori Adına göre ürün sayısı2
 --En yüksek Fiyatlı Ürün
 --En Düşük Fiyatlı Ürün
+--Ortalama Fiyat
 --Ortalama Hamburger Fiyatı
 
 --Toplam Sipariş Sayısı
@@ -16,3 +17,5 @@
 --Masa Sayısı
 
 ------------------------------
+
+İstatistiklerin Consume Edilmesi
