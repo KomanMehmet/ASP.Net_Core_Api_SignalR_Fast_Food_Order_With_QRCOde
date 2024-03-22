@@ -25,6 +25,11 @@ namespace SignalIR.DataAccessLayer.EntityFramework
             return context.Orders.OrderByDescending(x => x.OrderID).Take(1).Select(y => y.TotelPrice).FirstOrDefault();
         }
 
+        public decimal TodayTotalPrice()
+        {
+            return 0;
+        }
+
         public int TotalOrderCount()
         {
             using var context = new SignalIRContext();

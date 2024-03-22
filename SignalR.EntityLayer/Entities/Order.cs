@@ -1,4 +1,6 @@
-﻿namespace SignalR.EntityLayer.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace SignalR.EntityLayer.Entities
 {
     public class Order
     {
@@ -8,6 +10,7 @@
 
         public string Description { get; set; }
 
+        [Column(TypeName = "Date")]
         public DateTime OrderDate { get; set; }
 
         public decimal TotelPrice { get; set; }

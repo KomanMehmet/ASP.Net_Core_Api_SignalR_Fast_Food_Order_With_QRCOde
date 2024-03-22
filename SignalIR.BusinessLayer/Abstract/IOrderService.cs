@@ -10,5 +10,7 @@ namespace SignalIR.BusinessLayer.Abstract
         int TActiveOrderCount();
 
         decimal TLastOrderPrice();
+
+        decimal TtodayTotalPrice();
     }
 }

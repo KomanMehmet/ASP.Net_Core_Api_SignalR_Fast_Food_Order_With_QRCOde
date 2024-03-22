@@ -43,6 +43,11 @@ namespace SignalIR.BusinessLayer.Concrete
             return _orderDal.LastOrderPrice();
         }
 
+        public decimal TtodayTotalPrice()
+        {
+            return _orderDal.TodayTotalPrice();
+        }
+
         public int TTotalOrderCount()
         {
             return _orderDal.TotalOrderCount();

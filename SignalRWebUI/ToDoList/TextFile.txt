@@ -12,5 +12,7 @@
 --Aktif Sipariş Sayısı
 --Son Sipariş Tutarı
 --Kasadaki Tutar
---Bugünki Kazanç
+--Bugünki Kazanç //Sonradan yapılacak.
 --Masa Sayısı
+
+------------------------------
