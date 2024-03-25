@@ -30,7 +30,7 @@ namespace SignalRApi.Controllers
         {
             Booking Booking = new Booking
             {
-                Date = DateTime.Now,
+                Date = createBookingDto.Date,
                 Email = createBookingDto.Email,
                 Name = createBookingDto.Name,
                 PersonCount = createBookingDto.PersonCount,

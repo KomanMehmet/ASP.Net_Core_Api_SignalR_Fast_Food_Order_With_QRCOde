@@ -11,14 +11,16 @@ namespace SignalRApi.Hubs
         private readonly IOrderService _orderService;
         private readonly IMoneyCaseService _moneyCaseService;
         private readonly IMenuTableService _menuTableService;
+        private readonly IBookingService _bookingService;
 
-        public SignalIRHub(ICategoryService categoryService, IProductService productService, IOrderService orderService, IMoneyCaseService moneyCaseService, IMenuTableService menuTableService)
+        public SignalIRHub(ICategoryService categoryService, IProductService productService, IOrderService orderService, IMoneyCaseService moneyCaseService, IMenuTableService menuTableService, IBookingService bookingService)
         {
             _categoryService = categoryService;
             _productService = productService;
             _orderService = orderService;
             _moneyCaseService = moneyCaseService;
             _menuTableService = menuTableService;
+            _bookingService = bookingService;
         }
 
         public async Task SendStatistic()
@@ -79,6 +81,13 @@ namespace SignalRApi.Hubs
 
             var activeTableCount = _menuTableService.TMenuTableCount();
             await Clients.All.SendAsync("ReceiveActiveTableCount", activeTableCount);
+        }
+
+        public async Task GetBookingList()
+        {
+            var bookingList = _bookingService.TGetListAll();
+
+            await Clients.All.SendAsync("ReceiveBookingList", bookingList);
         }
 
     }
