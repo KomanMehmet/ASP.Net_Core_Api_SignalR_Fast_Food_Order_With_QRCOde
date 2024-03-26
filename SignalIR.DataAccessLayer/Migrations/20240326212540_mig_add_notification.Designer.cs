@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SignalIR.DataAccessLayer.Concrete;
 
@@ -11,9 +12,11 @@ using SignalIR.DataAccessLayer.Concrete;
 namespace SignalIR.DataAccessLayer.Migrations
 {
     [DbContext(typeof(SignalIRContext))]
-    partial class SignalIRContextModelSnapshot : ModelSnapshot
+    [Migration("20240326212540_mig_add_notification")]
+    partial class mig_add_notification
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -289,10 +292,6 @@ namespace SignalIR.DataAccessLayer.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("NotificationDescription")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NotificationIcon")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SignalIR.BusinessLayer.Abstract;
 using SignalIR.DtoLayer.BookingDtos;
 using SignalR.EntityLayer.Entities;
