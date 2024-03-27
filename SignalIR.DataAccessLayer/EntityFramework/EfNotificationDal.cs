@@ -24,5 +24,27 @@ namespace SignalIR.DataAccessLayer.EntityFramework
 
             return context.Notifications.Where(x => x.NotificationStatus == false).Count();
         }
+
+        public void NotificationStatusChangeToFalse(int id)
+        {
+            using var context = new SignalIRContext();
+
+            var value = context.Notifications.Find(id);
+
+            value.NotificationStatus = false;
+
+            context.SaveChanges();
+        }
+
+        public void NotificationStatusChangeToTrue(int id)
+        {
+            using var context = new SignalIRContext();
+
+            var value = context.Notifications.Find(id);
+
+            value.NotificationStatus = true;
+
+            context.SaveChanges();
+        }
     }
 }

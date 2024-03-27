@@ -43,6 +43,16 @@ namespace SignalIR.BusinessLayer.Concrete
             return _notificationDal.GetAllNotificationByFalse();
         }
 
+        public void TNotificationStatusChangeToFalse(int id)
+        {
+            _notificationDal.NotificationStatusChangeToFalse(id);
+        }
+
+        public void TNotificationStatusChangeToTrue(int id)
+        {
+            _notificationDal.NotificationStatusChangeToTrue(id);
+        }
+
         public void TUpdate(Notification entity)
         {
             _notificationDal.Update(entity);

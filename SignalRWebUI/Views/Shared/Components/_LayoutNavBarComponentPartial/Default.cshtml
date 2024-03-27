@@ -27,7 +27,7 @@
 						$("#constatus").text(connection.state);
 						setInterval(() => {
 							connection.invoke("GetNotificationListByStatusFalse");/* SignalIR veri çekme */
-						}, 3000);
+						}, 1500);
 					}).catch((err) => {
 						console.log(err)
 					});

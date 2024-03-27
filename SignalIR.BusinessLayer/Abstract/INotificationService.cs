@@ -8,5 +8,9 @@ namespace SignalIR.BusinessLayer.Abstract
         int TNotificationCountByStatusFalse();
 
         List<Notification> TNotificationsByStatusFalse();
+
+        void TNotificationStatusChangeToFalse(int id);
+
+        void TNotificationStatusChangeToTrue(int id);
     }
 }
