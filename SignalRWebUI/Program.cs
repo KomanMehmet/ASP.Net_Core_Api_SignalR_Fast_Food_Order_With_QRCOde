@@ -1,4 +1,10 @@
+using SignalIR.DataAccessLayer.Concrete;
+using SignalR.EntityLayer.Entities;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<SignalIRContext>();
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<SignalIRContext>();//Identity için gerekli
 
 builder.Services.AddHttpClient();
 // Add services to the container.
