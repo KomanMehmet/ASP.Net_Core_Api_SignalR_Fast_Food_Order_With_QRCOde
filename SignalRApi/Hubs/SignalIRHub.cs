@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using SignalIR.BusinessLayer.Abstract;
 using SignalIR.DataAccessLayer.Concrete;
+using System.Configuration;
 
 namespace SignalRApi.Hubs
 {
@@ -24,6 +25,8 @@ namespace SignalRApi.Hubs
             _bookingService = bookingService;
             _notificationService = notificationService;
         }
+
+        public static int ClientCount = 0;
 
         public async Task SendStatistic()
         {
@@ -110,6 +113,21 @@ namespace SignalRApi.Hubs
         public async Task SendMessage(string user, string message)
         {
             await Clients.All.SendAsync("ReceiveMessage", user, message);
+        }
+
+        //Client'e bağlı olan client sayısını getiriyor.
+        public override async Task OnConnectedAsync()
+        {
+            ClientCount++;
+            await Clients.All.SendAsync("ReceiveClientCount", ClientCount);
+            await base.OnConnectedAsync();
+        }
+
+        public override async Task OnDisconnectedAsync(Exception? exception)
+        {
+            ClientCount--;
+            await Clients.All.SendAsync("ReceiveClientCount", ClientCount);
+            await base.OnDisconnectedAsync(exception);
         }
     }
 }
