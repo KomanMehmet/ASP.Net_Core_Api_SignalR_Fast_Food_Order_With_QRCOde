@@ -21,3 +21,4 @@
 İstatistiklerin Consume Edilmesi
 
 --Mesajlar bölümü eklenecek.
+--Bildirime tıklanınca ilgili bildirim sayfasına gidilecek. Okunduğunda pasif olacak.
