@@ -22,3 +22,4 @@
 
 --Mesajlar bölümü eklenecek.
 --Bildirime tıklanınca ilgili bildirim sayfasına gidilecek. Okunduğunda pasif olacak.
+--Anasayfada book a table kısmı bize yazın olacak.

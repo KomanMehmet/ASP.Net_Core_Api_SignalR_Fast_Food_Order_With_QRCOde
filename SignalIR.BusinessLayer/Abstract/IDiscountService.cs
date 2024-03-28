@@ -7,5 +7,7 @@ namespace SignalIR.BusinessLayer.Abstract
         void TChangeStatusToTrue(int id);
 
         void TChangeStatusToFalse(int id);
+
+        List<Discount> TGetDiscountListByStatusTrue();
     }
 }

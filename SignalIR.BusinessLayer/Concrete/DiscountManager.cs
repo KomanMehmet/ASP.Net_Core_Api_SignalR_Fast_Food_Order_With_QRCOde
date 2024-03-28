@@ -38,6 +38,11 @@ namespace SignalIR.BusinessLayer.Concrete
             return _discountDal.GetById(id);
         }
 
+        public List<Discount> TGetDiscountListByStatusTrue()
+        {
+            return _discountDal.GetDiscountListByStatusTrue();
+        }
+
         public List<Discount> TGetListAll()
         {
             return _discountDal.GetListAll();

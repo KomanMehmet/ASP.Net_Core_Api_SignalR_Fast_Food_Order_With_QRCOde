@@ -93,5 +93,12 @@ namespace SignalRApi.Controllers
 
             return Ok("Discount status pasif hale getirildi.");
         }
+
+        [HttpGet("GetDiscountByStatusTrue")]
+        public IActionResult GetDiscountByStatusTrue()
+        {
+            return Ok(_discountService.TGetDiscountListByStatusTrue());
+        }
+
     }
 }
