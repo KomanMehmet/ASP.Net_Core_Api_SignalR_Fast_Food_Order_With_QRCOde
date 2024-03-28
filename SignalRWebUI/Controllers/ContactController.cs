@@ -61,7 +61,7 @@ namespace SignalRWebUI.Controllers
         {
             var client = _httpClientFactory.CreateClient();
 
-            var responseMessage = await client.DeleteAsync($"https://localhost:7074/api/Contacts?id={id}");
+            var responseMessage = await client.DeleteAsync($"https://localhost:7074/api/Contacts/{id}");
 
             if (responseMessage.IsSuccessStatusCode)
             {
@@ -76,7 +76,7 @@ namespace SignalRWebUI.Controllers
         {
             var client = _httpClientFactory.CreateClient();
 
-            var responseMessage = await client.GetAsync($"https://localhost:7074/api/Contacts/GetContact?id={id}");
+            var responseMessage = await client.GetAsync($"https://localhost:7074/api/Contacts/{id}");
 
             if (responseMessage.IsSuccessStatusCode)
             {
@@ -99,7 +99,7 @@ namespace SignalRWebUI.Controllers
 
             StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
 
-            var responseMessage = await client.PutAsync("https://localhost:7074/api/Contacts/", content);
+            var responseMessage = await client.PutAsync("https://localhost:7074/api/Contacts", content);
 
             if (responseMessage.IsSuccessStatusCode)
             {

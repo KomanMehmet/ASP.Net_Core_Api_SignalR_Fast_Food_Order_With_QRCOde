@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SignalIR.BusinessLayer.Abstract;
 using SignalIR.DtoLayer.ContactDtos;
 using SignalR.EntityLayer.Entities;
+using static System.Net.WebRequestMethods;
 
 namespace SignalRApi.Controllers
 {
@@ -33,7 +34,11 @@ namespace SignalRApi.Controllers
                 Email = createContactDto.Email,
                 FooterDescription = createContactDto.FooterDescription,
                 Location = createContactDto.Location,
-                PhoneNumber = createContactDto.PhoneNumber
+                PhoneNumber = createContactDto.PhoneNumber,
+                OpenHours = createContactDto.OpenHours,
+                OpenDaysDescription = createContactDto.OpenDaysDescription,
+                OpenDays = createContactDto.OpenDays,
+                FooterTitle = createContactDto.FooterTitle,
             };
 
             _contactService.TAdd(Contact);
@@ -60,7 +65,11 @@ namespace SignalRApi.Controllers
                 Email = updateContactDto.Email,
                 FooterDescription = updateContactDto.FooterDescription,
                 Location = updateContactDto.Location,
-                PhoneNumber = updateContactDto.PhoneNumber
+                PhoneNumber = updateContactDto.PhoneNumber,
+				FooterTitle = updateContactDto.FooterTitle,
+                OpenDays = updateContactDto.OpenDays,
+                OpenDaysDescription = updateContactDto.OpenDaysDescription,
+                OpenHours = updateContactDto.OpenHours
 
             };
 
