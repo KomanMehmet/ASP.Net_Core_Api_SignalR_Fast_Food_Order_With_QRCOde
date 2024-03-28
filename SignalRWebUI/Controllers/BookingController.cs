@@ -115,7 +115,7 @@ namespace SignalRWebUI.Controllers
         {
             var client = _httpClientFactory.CreateClient();
 
-            var responseMessage = await client.GetAsync($"https://localhost:7074/api/Bookings/BookingStatusApproved/{id}");
+            await client.GetAsync($"https://localhost:7074/api/Bookings/BookingStatusApproved/{id}");
 
             return RedirectToAction("Index");
         }
@@ -124,7 +124,7 @@ namespace SignalRWebUI.Controllers
 		{
 			var client = _httpClientFactory.CreateClient();
 
-			var responseMessage = await client.GetAsync($"https://localhost:7074/api/Bookings/BookingStatusCancelled/{id}");
+			await client.GetAsync($"https://localhost:7074/api/Bookings/BookingStatusCancelled/{id}");
 
 			return RedirectToAction("Index");
 		}

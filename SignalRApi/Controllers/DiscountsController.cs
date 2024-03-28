@@ -33,7 +33,8 @@ namespace SignalRApi.Controllers
                 Title = createDiscountDto.Title,
                 Description = createDiscountDto.Description,
                 Amount = createDiscountDto.Amount,
-                ImageURL = createDiscountDto.ImageURL
+                ImageURL = createDiscountDto.ImageURL,
+                Status = false
             };
 
             _discountService.TAdd(Discount);
@@ -60,7 +61,8 @@ namespace SignalRApi.Controllers
                 Title = updateDiscountDto.Title,
                 Description = updateDiscountDto.Description,
                 Amount= updateDiscountDto.Amount,
-                ImageURL = updateDiscountDto.ImageURL
+                ImageURL = updateDiscountDto.ImageURL,
+                Status = updateDiscountDto.Status,
             };
 
             _discountService.TUpdate(Discount);
@@ -74,6 +76,22 @@ namespace SignalRApi.Controllers
             var value = _discountService.TGetById(id);
 
             return Ok(value);
+        }
+
+        [HttpGet("ChangeStatusToTrue")]
+        public IActionResult ChangeStatusToTrue(int id)
+        {
+            _discountService.TChangeStatusToTrue(id);
+
+            return Ok("Discount status aktif hale getirildi.");
+        }
+
+        [HttpGet("ChangeStatusToFalse")]
+        public IActionResult ChangeStatusToFalse(int id)
+        {
+            _discountService.TChangeStatusToFalse(id);
+
+            return Ok("Discount status pasif hale getirildi.");
         }
     }
 }

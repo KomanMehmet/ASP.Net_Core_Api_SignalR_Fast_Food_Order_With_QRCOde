@@ -19,3 +19,5 @@
 ------------------------------
 
 İstatistiklerin Consume Edilmesi
+
+--Mesajlar bölümü eklenecek.

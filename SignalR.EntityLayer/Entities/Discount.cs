@@ -11,5 +11,7 @@
         public string  Amount { get; set; }
 
         public string ImageURL { get; set; }
+
+        public bool Status { get; set; }
     }
 }

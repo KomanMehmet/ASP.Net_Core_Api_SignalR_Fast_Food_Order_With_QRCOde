@@ -17,7 +17,7 @@
 					</div>
 					<div class="card-body">
 						<div class="card-sub">
-							İndirim ile ilgili işlemleri buradan yapabilirsiniz.
+							İndirim ile ilgili işlemleri buradan yapabilirsiniz. Tema bütünlüğü için <strong>2</strong> adet indirimli ürünü aktif ediniz.
 						</div>
 						<table class="table mt-3">
 							<thead>
@@ -25,8 +25,11 @@
 									<th scope="col">#</th>
 									<th scope="col">Başlık Bilgisi</th>
 									<th scope="col">Açıklama</th>
-									<th scope="col">İndirim Miktarı</th>
+									<th scope="col">İndirim Yüzdesi</th>
 									<th scope="col">Görsel</th>
+									<th scope="col">Durum</th>
+									<th scope="col">Aktif Yap</th>
+									<th scope="col">Pasif Yap</th>
 									<th scope="col">Sil</th>
 									<th scope="col">Güncelle</th>
 								</tr>
@@ -41,6 +44,9 @@
 										<td>@item.Description</td>
 										<td>@item.Amount</td>
 										<td>@item.ImageURL</td>
+										<td>@item.Status</td>
+										<td><a href="/Discount/ChangeStatusToTrue/@item.DiscountID" class="btn btn-outline-warning">Aktif Yap</a></td>
+										<td><a href="/Discount/ChangeStatusToFalse/@item.DiscountID" class="btn btn-outline-info">Pasif Yap</a></td>
 										<td><a href="/Discount/DeleteDiscount/@item.DiscountID" class="btn btn-danger btn-border btn-round">Sil</a></td>
 										<td><a href="/Discount/UpdateDiscount/@item.DiscountID" class="btn btn-outline-success">Güncelle</a></td>
 									</tr>
