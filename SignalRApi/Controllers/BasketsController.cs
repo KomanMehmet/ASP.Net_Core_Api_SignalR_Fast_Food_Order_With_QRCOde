@@ -50,6 +50,9 @@ namespace SignalRApi.Controllers
         [HttpPost]
         public IActionResult CreateBasket(CreateBasketDto createBasketDto)
         {
+            //QR CODE canlıya alınırsa burada bu işlemler olacak.
+
+
             using var context = new SignalIRContext();
 
             _basketService.TAdd(new Basket
